@@ -52,9 +52,7 @@ export default function Dropzone({
     } else if (localFiles.length + remoteFiles.length === 5) {
       alert("이미지는 5개까지 가능합니다.");
     } else {
-      for (let i = 0; i < files.length; i += 1) {
-        handleFile(files[i]);
-      }
+      Array.from(files).map((file, i) => handleFile(file));
     }
   };
 
